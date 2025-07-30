@@ -1,6 +1,7 @@
 let left_btn = document.getElementsByClassName('bi-chevron-left')[0];
 let right_btn = document.getElementsByClassName('bi-chevron-right')[0];
 let cards = document.getElementsByClassName('cards')[0];
+let search = document.getElementsByClassName('search')[0];
 
 left_btn.addEventListener('click', () => {
     cards.scrollLeft -= 140;
@@ -41,4 +42,20 @@ fetch(json_url).then(Response => Response.json())
         document.getElementById('date').innerText = data[0].date;
         document.getElementById('rate').innerHTML = `<span>IMDB</span><i class="bi bi-star-fill"></i> ${data[0].imdb}`;
 
+        // search data load
+        data.forEach(element => {
+            let { name, imdb, date, sposter, genre, url } = element;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.href = url;
+            card.innerHTML = `
+            <img src="${sposter}" alt="">
+            <div class="cont">
+                <h3>${name} </h3>
+                <p>${genre}, ${date} , <span>IMDB</span><i class="bi bi-star-fill"></i> ${imdb}</p>
+            </div>
+            `
+
+            search.appendChild(card);
+        });
     });
