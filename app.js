@@ -91,10 +91,10 @@ fetch(json_url).then(Response => Response.json())
         play.addEventListener('click', () => {
             if (video.paused) {
                 video.play();
-                play.innerHTML = `Play <i class="bi bi-pause-fill"></i>`
+                play.innerHTML = `Play <i class="bi bi-pause-fill"></i>`;
             } else {
-                play.innerHTML = `Watch <i class="bi bi-play-fill"></i>`
                 video.pause();
+                play.innerHTML = `Watch <i class="bi bi-play-fill"></i>`;
             }
         })
 
