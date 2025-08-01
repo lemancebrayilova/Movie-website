@@ -16,7 +16,7 @@
 <body>
 
     <header>
-        <video src="video/theboys.webm" autoplay muted></video>
+        <video id="video" src="video/theboys.webm" autoplay muted playsinline></video>
 
         <nav>
             <div class="logo_ul">
@@ -55,7 +55,7 @@
         </nav>
 
         <div class="content">
-            <h1 id="title">Money Heist</h1>
+            <h1 id="title">The Boys</h1>
             <p>A criminal mastermind who goes by "The Professor" has a plan to pull off the biggest heist in recorded history -- to print billionss of euros in the Royal Mint of Spain.</p>
             <div class="details">
                 <h6>A Netflix Original Film</h6>
@@ -105,7 +105,7 @@
 
                 document.getElementById('title').innerText = movie_array[0].name;
                 document.getElementsByTagName('video')[0].setAttribute('src', movie_array[0].trailer);
-                document.getElementsByTagName('video')[0].play();
+                document.getElementById('video').play();
                 document.getElementById('low_q').href = movie_array[0].low;
                 document.getElementById('medium_q').href = movie_array[0].medium;
                 document.getElementById('high_q').href = movie_array[0].high;
